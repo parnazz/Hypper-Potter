@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private InputController inputController;
 
     private bool bCanMove = false;
+    private bool bIsVulnerableToSlow = true;
 
     // Start is called before the first frame update
     void Start()
@@ -54,14 +55,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!bIsVulnerableToSlow) { return; }
+
         movementSpeed -= speedDecrease;
         StartCoroutine(GainSpeedCoroutine());
     }
 
     private IEnumerator GainSpeedCoroutine()
     {
+        bIsVulnerableToSlow = false;
         yield return new WaitForSeconds(timeToGainSpeed);
         movementSpeed += speedDecrease;
+        bIsVulnerableToSlow = true;
     }
 
     private void OnDisable()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7284648501648745928}
   - component: {fileID: 7294883240223668414}
   - component: {fileID: -6679193486602827830}
+  - component: {fileID: 835651766090814000}
   m_Layer: 0
   m_Name: Money
   m_TagString: Untagged
@@ -96,3 +97,16 @@ CapsuleCollider:
   m_Height: 0.58823854
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &835651766090814000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307320493735015856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4583bbde2dc113642aa84f4e567bcb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 100
