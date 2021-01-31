@@ -32500,6 +32500,8 @@ MonoBehaviour:
   movementSpeed: 8
   speedDecrease: 3
   timeToGainSpeed: 2
+  horizontalAxisMultiplier: 3
+  verticalAxisMultiplier: 2
 --- !u!1001 &1320403213
 PrefabInstance:
   m_ObjectHideFlags: 0
