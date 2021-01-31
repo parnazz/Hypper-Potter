@@ -53,6 +53,21 @@ public class PlayerController : MonoBehaviour
         bCanMove = !bCanMove;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            EventManager.onCoinPickup?.Invoke();
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            EventManager.onGameEnd?.Invoke();
+            EnableMovement();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!bIsVulnerableToSlow) { return; }

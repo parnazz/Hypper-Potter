@@ -45,6 +45,7 @@ public class EnemyController : MonoBehaviour
         movementVector = Vector3.zero;
 
         EventManager.onGameStarted += EnableMovement;
+        EventManager.onGameEnd += EnableMovement;
     }
 
     // Update is called once per frame
@@ -79,6 +80,14 @@ public class EnemyController : MonoBehaviour
         StartCoroutine(MoveStraightCoroutine());
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            EventManager.onCrossFinishLine?.Invoke();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!bIsVulnerableToSlow) { return; }
@@ -98,5 +107,6 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         EventManager.onGameStarted -= EnableMovement;
+        EventManager.onGameEnd -= EnableMovement;
     }
 }

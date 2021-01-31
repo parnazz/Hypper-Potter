@@ -731,13 +731,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2123dc017a6f94791e3abb6e25c8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
+  movementSpeed: 8
   speedDecrease: 4
   timeToGainSpeed: 2
   horizontalAxisMultiplier: 2
   verticalAxisMultiplier: 1.5
   minTimeToStraightMovement: 1
   maxTimeToStraightMovement: 5
+  minTimeToStrafeMovement: 1
+  maxTimeToStrafeMovement: 5
 --- !u!1 &1916815697268830779
 GameObject:
   m_ObjectHideFlags: 0
